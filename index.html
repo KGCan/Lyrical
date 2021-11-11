@@ -4,9 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--Link to CSS-->
+    <link rel = "stylesheet" href = "./assets/css/style.css">
     <title>Lyrical</title>
 </head>
 <body>
-    
+<!--header Div-->
+    <header>
+        <h1>Lyrical</h1>
+        <p>You know when there's a song you just cannot find the lyrics to? You came to the right place!</p>
+    </header>
+<!--search and results field-->
+    <div class = "mainSearch">
+        <div class = "search">
+            <div class = "row">
+                <h1>Enter a Song Title or Artist:</h1>
+            </div>
+            <div class = "row">
+                <input type = "text" class = "searchInput" placeholder = "type here">
+                <button type = "submit" class = "searchBtn">
+                    <i class = "fas fa-search"></i>
+                </button>
+<!--results will appear with a button to listen to a sound clip and a button to obtain more information-->
+        </div>
+    </div>
+<!--section for results from napster API & Apple API-->
+<div>
+    <div class = "appleResults">Info</div>
+    <div class = "napsterResults">Click below to hear a segment of the song</div>
+</div>
+<!--footer section-->
+    <footer>
+        <h2>2021</h2>
+        <div>
+            <a>add images & names here</a>
+        </div>
+    </footer>
 </body>
+<!--Link to JS-->
+<script src = "./assets/js/script.js"></script>
 </html>
