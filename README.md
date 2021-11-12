@@ -7,4 +7,4 @@ GIVEN a user hears a song
 WHEN they enter a phrase in search
 THEN user sees song that matches the lyrics
 
-https://api.lyrics.ovh/v1/
+"https://api.lyrics.ovh/v1/coldplay/song"+

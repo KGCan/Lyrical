@@ -1,51 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--add link for foundation styling here-->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css" crossorigin="anonymous">
-<!--Link to CSS-->
-    <link rel = "stylesheet" href = "./assets/css/style.css">
+    <!--add link for foundation styling here-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.4/dist/css/foundation.min.css"
+        crossorigin="anonymous">
+    <!--Link to CSS-->
+    <link rel="stylesheet" href="./assets/css/style.css">
     <title>Lyrical</title>
 </head>
+
 <body>
-<!--header Div-->
+    <!--header Div-->
     <header>
         <h1>Lyrical</h1>
         <p>You know when there's a song you just cannot find the lyrics to? You came to the right place!</p>
     </header>
-<!--search and results field-->
-    <div class = "mainSearch">
-        <div class = "search">
+    <!--search and results field-->
+    <div class="mainSearch">
+        <div class="search">
             <div>
                 <h1>Enter a Song Title or Artist:</h1>
             </div>
-            <div class="input-group input-group-rounded">
-                <input class="input-group-field" type="search">
-                <div class="input-group-button">
-                    <input type="submit" class="button secondary" value="Search">
+            <div class="search-field">
+                <div class="input-group input-group-rounded">
+                    <input class="input-group-field" type="search">
+                    <div class="input-group-button">
+                        <input type="submit" class="button secondary" value="Search">
+                    </div>
                 </div>
             </div>
             <div>
-                <input type = "text" class = "searchInput" placeholder = "type here">
-                <button type = "submit" class = "searchBtn">
-                    <i class = "fas fa-search"></i>
+                <input type="text" class="searchInput" placeholder="type here">
+                <button type="submit" class="searchBtn">
+                    <i class="fas fa-search"></i>
                 </button>
-<!--list of results will appear here to show up to x amount of matches, results will be "clickable"-->
+                <!--list of results will appear here to show up to x amount of matches, results will be "clickable"-->
 
-<!--connect results list to secondary API so when we click one of the results it will enter the artist & song title and pull the lyrics-->
+                <!--connect results list to secondary API so when we click one of the results it will enter the artist & song title and pull the lyrics-->
+            </div>
         </div>
-    </div>
-<!--footer section-->
-    <footer>
-        <h2>2021</h2>
-        <div>
-            <a>add images & names here</a>
-        </div>
-    </footer>
+        <!--footer section-->
+        <footer>
+            <h2>2021</h2>
+            <div>
+                <a>add images & names here</a>
+            </div>
+        </footer>
 </body>
 <!--Link to JS-->
-<script src = "./assets/js/script.js"></script>
+<script src="./assets/js/script.js"></script>
+
 </html>
