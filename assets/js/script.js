@@ -1,4 +1,5 @@
 var buttonSearch = document.querySelector(".searchBtn")
+
 buttonSearch.addEventListener("click", function(){
     var searchText = document.querySelector(".searchInput")
     var LyricsGoHere = document.getElementById("appendHere")
