@@ -8,9 +8,29 @@
     border-radius: 0 1000px 5000px 0;
     font-size: 0.8rem;
   }
+ 
   
   .search-field{
     margin:0 25%;
   }
-  
-  
+  body{
+    background-color:#a6a6a6;
+  }
+  h1{
+    font-size: 24pt;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-style: italic;
+   align-content: center;
+   margin: auto;
+   padding: 20px;
+   width: 52%;
+  }
+
+  .centered {
+    margin: auto;
+    width: 40%;
+    border-left: 25px gray;
+    border-right: 25px gray;
+    size: 50%;
+  }

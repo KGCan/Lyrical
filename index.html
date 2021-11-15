@@ -15,9 +15,10 @@
 
 <body>
     <!--header Div-->
-    <header>
-        <h1>Lyrical</h1>
-        <p>You know when there's a song you just cannot find the lyrics to? You came to the right place!</p>
+    <header class="centered" id="logo">
+        <div class="logo-image">
+            <img src="assets\images\Lyrical-circle.gif" alt="music note and Lyrical name" />
+        </div>
     </header>
     <!--search and results field-->
     <div class="mainSearch">
@@ -29,12 +30,12 @@
                 <div class="input-group input-group-rounded">
                     <input class="input-group-field" type="search">
                     <div class="input-group-button">
-                        <input type="submit" class="button secondary" value="Search">
+                        <input type="submit" class="button" value="Search">
                     </div>
                 </div>
             </div>
             <div>
-            
+
                 <!--list of results will appear here to show up to x amount of matches, results will be "clickable"-->
 
                 <!--connect results list to secondary API so when we click one of the results it will enter the artist & song title and pull the lyrics-->
