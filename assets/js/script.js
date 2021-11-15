@@ -1,6 +1,6 @@
 var searchLyrics = function (){
   //get search res 
-    var url = "https://api.lyrics.ovh/v1/"+ artist + "/" + song + ""
+    var url = "https://api.lyrics.ovh/v1/"+ artist + "/" + song
     fetch(url).then(function(data){
         console.log
         
