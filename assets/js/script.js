@@ -1,8 +1,8 @@
-var buttonSearch = document.querySelector(".searchBtn")
+var buttonSearch = document.querySelector(".search-button")
 
 buttonSearch.addEventListener("click", function(){
-    var searchText = document.querySelector(".searchInput")
-    var LyricsGoHere = document.getElementById("appendHere")
+    var searchText = document.querySelector(".input-group-field")
+    var LyricsGoHere = document.getElementById("results")
     console.log(searchText.value)
     fetch("https://api.lyrics.ovh/v1/sia/"+searchText.value)
     .then(response => response.json())
