@@ -1,32 +1,45 @@
 var buttonSearch = document.querySelector(".search-button")
 
-  
-buttonSearch.addEventListener("click", function(){
+
+buttonSearch.addEventListener("click", function () {
     var searchText = document.querySelector(".input-group-field")
     var results = document.getElementById("results")
-    var artistUrl = "https://cors-anywhere.herokuapp.com/api.deezer.com/artist/"+ searchText.value
+    var artistUrl = "https://cors-anywhere.herokuapp.com/api.deezer.com/artist/" + searchText.value
     console.log(searchText.value)
     function getArtist() {
         fetch(artistUrl, {
-        mode: 'cors',
-        headers: {
-            'Access-Control-Allow-Origin':'*'
-          }
+            mode: 'cors',
+            headers: {
+                'Access-Control-Allow-Origin': '*'
+            }
         })
-        .then(response => response.json())
-        .then(artist => {
-            console.log(artist.tracklist)
-            results.append(artist.tracklist)
-            return artist
-    })
+            .then(response => response.json())
+            .then(artist => {
+                var songTitle = "http://cors-anywhere.herokuapp.com/api.deezer.com/artist/3469/top?limit=5" + Array.length[0]
+                console.log(artist)
+                results.append(artist.tracklist)
+                fetch(songTitle, {
+                    mode: 'cors',
+                    headers: {
+                        'Access-Control-Allow-Origin': '*'
+                    }
+                }).then(res => res.json())
+                    .then(data => {
+                        var string = "this is a string"
+                        console.log(string[6])
+                        console.log(data)
+                         
+                    })
+                return artist
+            })
     }
     var trackList = getArtist()
     fetch(trackList)
-    .then(response => response.json())
-    .then(tracks => {
-        console.log(tracklist)
-        results.append(tracklist)
-    })
+        .then(response => response.json())
+        .then(tracks => {
+            console.log(tracks)
+            results.append(tracks.tracklist)
+        })
 })
 
 // buttonSearch.addEventListener("click", function(){
@@ -42,13 +55,13 @@ buttonSearch.addEventListener("click", function(){
 //     })
 // })
 
-var searchLyrics = function (){
-  //get search res 
-    var url = "https://api.lyrics.ovh/v1/"+ artist + "/" + song
-    fetch(url).then(function(data){
+var searchLyrics = function () {
+    //get search res 
+    var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
+    fetch(url).then(function (data) {
         console.log
-        
-    }).catch(function(err){
+
+    }).catch(function (err) {
         console.log(err);
     });
 }
