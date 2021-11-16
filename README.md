@@ -3,7 +3,7 @@
 ## User Story
 * AS A user
 * I WANT to search for songs by an artist
-* SO THAT I find a list of 10 songs by that artist and I can see the lyrics of that song
+* SO THAT I find a list of 5 songs by that artist and I can see the lyrics of that song
 
 ## Acceptance Criteria
 
