@@ -1,6 +1,22 @@
 var buttonSearch = document.querySelector(".search-button")
 
 
+var string01 = "http://api.deezer.com/artist/3469/top?limit=50"
+var string02 = "cors-anywhere.herokuapp.com/"
+var artistID = 23
+
+var temp = ""
+for (let i = 0; i < string01.length -1; i++) {
+    if (i == 6) {
+        temp = temp + (string01[i] + string02)
+    }
+    else {
+        temp = temp + string01[i]
+    }
+
+}
+console.log(temp)
+
 buttonSearch.addEventListener("click", function () {
     var searchText = document.querySelector(".input-group-field")
     var results = document.getElementById("results")
@@ -15,6 +31,13 @@ buttonSearch.addEventListener("click", function () {
         })
             .then(response => response.json())
             .then(artist => {
+
+                //insert the string of cors-anywhere
+                // artist.title
+                // insert the limit through string manipulation
+
+
+
                 var songTitle = "http://cors-anywhere.herokuapp.com/api.deezer.com/artist/3469/top?limit=5" + Array.length[0]
                 console.log(artist)
                 results.append(artist.tracklist)
@@ -28,7 +51,7 @@ buttonSearch.addEventListener("click", function () {
                         var string = "this is a string"
                         console.log(string[6])
                         console.log(data)
-                         
+
                     })
                 return artist
             })
