@@ -33,11 +33,16 @@ https://github.com/KGCan/Lyrical.git
 
 # Website URL:
 
-
+https://kgcan.github.io/Lyrical/
 
 # Screenshot:
 
 
+
 # Additional resources Used to complete the project
 
-* 
+* Deezer API
+* LyricsOVH API
+* Assistance from TA's Quinn & Dru
+* Assistance from Instructor Stacy
+* Assistance from Tutors
