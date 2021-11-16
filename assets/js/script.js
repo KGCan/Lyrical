@@ -1,5 +1,5 @@
 var buttonSearch = document.querySelector(".search-button")
-var trackList; 
+
   
 buttonSearch.addEventListener("click", function(){
     var searchText = document.querySelector(".input-group-field")
@@ -14,19 +14,18 @@ buttonSearch.addEventListener("click", function(){
           }
         })
         .then(response => response.json())
-        .then(song => {
-            console.log(song.tracklist)
-            trackList = song.tracklist
-            return song.tracklist
+        .then(artist => {
+            console.log(artist.tracklist)
+            results.append(artist.tracklist)
+            return artist
     })
     }
-    console.log(trackList)
+    var trackList = getArtist()
     fetch(trackList)
-    // console.log(getArtist())
     .then(response => response.json())
     .then(tracks => {
-        console.log(tracks)
-        results.append(song.tracklist)
+        console.log(tracklist)
+        results.append(tracklist)
     })
 })
 
