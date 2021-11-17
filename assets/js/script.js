@@ -50,7 +50,7 @@ buttonSearch.addEventListener("click", function () {
 
                 var songTitle = "http://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artist.id + "/top?limit=20"
                 console.log(artist)
-               // results.append(artist.tracklist)
+                // results.append(artist.tracklist)
                 fetch(songTitle, {
                     mode: 'cors',
                     headers: {
@@ -67,7 +67,7 @@ buttonSearch.addEventListener("click", function () {
             })
     }
     var trackList = getArtist()
-
+    listEl.textContent = song.title
     function showSongs(data) {
         console.log(data)
         for (i = 0; i < data.length; i++) {
@@ -78,24 +78,78 @@ buttonSearch.addEventListener("click", function () {
             listEl.textContent = song.title
             listEl.onclick = searchLyrics
             songs.appendChild(listEl)
+            var searchLyrics = function (event) {
+                //get search res 
+
+                var lyricsGoHere = document.getElementById("lyric-text")
+                var url = "https://api.lyrics.ovh/v1/" + searchText.value + "/" + song.title
+
+                JSON.stringify(song.title)
+
+                fetch(url).then(res => res.json())
+                    .then(song => {
+                        console.log(song.lyrics)
+                        lyricsGoHere.append(song.lyrics)
+                            .then(function (data) {
+                                console.log(data)
+
+                            }).catch(function (err) {
+                                console.log(err);
+
+                            });
+                    })
+
+            }
+
         }
+
+
     }
-    var searchLyrics = function (event) {
-        //get search res 
-        var song = event.target.textContent
-        var artist = searchText.value
-        var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
+    // var song = event.target.textContent("li")
+    // console.log(textContent)
+    // var artist = searchText.value
+    // var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
 
-        fetch(url).then(res => res.json())
-            .then(function (data) {
-                console.log(data)
+    // fetch(url).then(res => res.json())
+    //     .then(function (data) {
+    //         console.log(data)
 
-            }).catch(function (err) {
-                console.log(err);
+    //     }).catch(function (err) {
+    //         console.log(err);
 
-          });
-          var lyrics = document.getElementById("lyric-text")
-          var pEl = lyrics.appendChild(song.lyrics)
-          console.log(song.lyrics)
-    }
+    //   });
+
+
+    // listEl.addEventListener("click", function(){
+    //     var songTitle = document.querySelector("li")
+    //     var lyricsGoHere = document.getElementById("lyric-text")
+    //     var url = "https://api.lyrics.ovh/v1/" + searchText.value + "/" + songTitle
+
+    //     fetch(url).then(res => res.json())
+    //     .then(song => {
+    //         console.log(song.lyrics)
+    //         LyricsGoHere.append(song.lyrics)
+    //     .then(function (data) {
+    //         console.log(data)
+
+    //     }).catch(function (err) {
+    //         console.log(err);
+
+    //   });
+
+    // })
+// })
 })
+
+// buttonSearch.addEventListener(“click”, function(){
+//     var searchText = document.querySelector(“.input-group-field”)
+//     var LyricsGoHere = document.getElementById(“results”)
+//     var lyricsUrl = “https://api.lyrics.ovh/v1/sia/”+searchText.value
+//     console.log(searchText.value)
+//     fetch(lyricsUrl)
+//     .then(response => response.json())
+//     .then(song => {
+//         console.log(song.lyrics)
+//         LyricsGoHere.append(song.lyrics)
+//     })
+// })
