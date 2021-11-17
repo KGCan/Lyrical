@@ -15,11 +15,13 @@
 
 <body>
     <!--header Div-->
-    <header class="centered" id="logo">
-        <div class="logo-image">
-            <img src="assets\images\Lyrical-circle.gif" alt="music note and Lyrical name" />
-        </div>
-    </header>
+    <header>
+        <div class="hero-section">
+            <div class="hero-section-text">
+                <img src="assets\images\lyrical-logo-large.gif" alt="music note and Lyrical name" />
+            </div>
+          </div>
+        </header>
     <!--search and results field-->
     <div class="mainSearch">
         <div class="search">
@@ -30,12 +32,14 @@
                 <div class="input-group input-group-rounded">
                     <input class="input-group-field" type="search">
                     <div class="input-group-button">
-                        <input type="submit" class="button" value="Search">
+                        <input type="submit" class="buttonSearch" value="Search">
                     </div>
                 </div>
             </div>
             <div id="results">
-
+                <h2>
+                    Select a Song for Lyrics
+                </h2>
                 <!--list of results will appear here to show up to x amount of matches, results will be "clickable"-->
                 <ul id="songs">
 
@@ -44,15 +48,20 @@
             </div>
             
         </div>
+        <div class="lyric-results">
+            <h3>Lyrics</h3>
+           
+        </div>
         <!--footer section-->
         <footer>
-            <h2>2021</h2>
+            <h5>2021</h5>
             <div>
-                <a>add images & names here</a>
+                <p class="footer-p">Created by: Sara Brizendine, Kirsten Canady, Jazzmin Goodman, and Megan Phillips!</p>
+                <a href="https://github.com/KGCan/Lyrical.git" target="_blank">Git Hub Repository</a>
             </div>
         </footer>
+        <!--Link to JS-->
+        <script src="./assets/js/script.js"></script>
 </body>
-<!--Link to JS-->
-<script src="./assets/js/script.js"></script>
 
 </html>

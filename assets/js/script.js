@@ -23,7 +23,7 @@ fetch(url).then(res => res.json())
     .then(data => console.log(data))
     .catch(err => console.log(err))
 
-    var searchText = document.querySelector(".input-group-field")
+var searchText = document.querySelector(".input-group-field")
 
 buttonSearch.addEventListener("click", function () {
     var results = document.getElementById("results")
@@ -68,30 +68,31 @@ buttonSearch.addEventListener("click", function () {
     }
     var trackList = getArtist()
 
-function showSongs(data) {
-    console.log(data)
-    for(i=0; i< data.length; i++){
-        var song = data[i]
-      var songs =  document.getElementById("songs")
-      var listEl = document.createElement("li")
-      //add class to list el
-      listEl.textContent = song.title 
-      listEl.onclick =searchLyrics
-      songs.appendChild(listEl)
-    }
-}
-var searchLyrics = function (event) {
-    //get search res 
-    var song = event.target.textContent
-    var artist = searchText.value
-    var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
-    
-    fetch(url).then(res => res.json())
-    .then(function (data) {
+    function showSongs(data) {
         console.log(data)
+        for (i = 0; i < data.length; i++) {
+            var song = data[i]
+            var songs = document.getElementById("songs")
+            var listEl = document.createElement("li")
+            //add class to list el
+            listEl.textContent = song.title
+            listEl.onclick = searchLyrics
+            songs.appendChild(listEl)
+        }
+    }
+    var searchLyrics = function (event) {
+        //get search res 
+        var song = event.target.textContent
+        var artist = searchText.value
+        var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
 
-    }).catch(function (err) {
-        console.log(err);
+        fetch(url).then(res => res.json())
+            .then(function (data) {
+                console.log(data)
 
-    });
-}
+            }).catch(function (err) {
+                console.log(err);
+
+            });
+    }
+})
