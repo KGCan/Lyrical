@@ -75,11 +75,6 @@ buttonSearch.addEventListener("click", function () {
 
                             });
                     })
-                    function clear_div() {
-                        document.getElementById("result").innerHTML = "";
-                        method = "POST" action = "process.php" onsubmit = "clear_div()"
-                 }
-
             }
 
         }
@@ -87,5 +82,3 @@ buttonSearch.addEventListener("click", function () {
 
     }
 })
-
-
