@@ -9,29 +9,26 @@
     font-size: 0.8rem;
   }
  
-.hero-section {
-  background-image: src("assets\images\lyrical-logo-large.gif");
-  background-size: cover;
-  height: 60vh;
-  text-align: center;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.hero-section .hero-section-text {
-  color: #fefefe;
-  text-shadow: 1px 1px 2px #0a0a0a;
-}
-
-
+  .hero-section {
+    background-image: src("assets\images\lyrical-logo-large.gif");
+    background-size: cover;
+    height: 60vh;
+    text-align: center;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
   
+  .hero-section .hero-section-text {
+    color: #fefefe;
+    text-shadow: 1px 1px 2px #0a0a0a;
+  }
   .search-field{
     margin:0 25%;
   }
@@ -68,4 +65,14 @@ h3{
   }
   .footer-p{
     display: inline;
+  }
+    #results li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+  
+  li:hover {
+    background-color:purple;
   }
