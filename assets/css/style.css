@@ -1,0 +1,71 @@
+
+.input-group-rounded .input-group-field {
+    border-radius: 5000px 0 0 5000px;
+    padding-left: 1rem;
+  }
+  
+  .input-group-rounded .input-group-button .button {
+    border-radius: 0 1000px 5000px 0;
+    font-size: 0.8rem;
+  }
+ 
+.hero-section {
+  background-image: src("assets\images\lyrical-logo-large.gif");
+  background-size: cover;
+  height: 60vh;
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero-section .hero-section-text {
+  color: #fefefe;
+  text-shadow: 1px 1px 2px #0a0a0a;
+}
+
+
+  
+  .search-field{
+    margin:0 25%;
+  }
+  body{
+    background-color:#a6a6a6;
+  }
+  h1{
+    font-size: 24pt;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    font-style: italic;
+   align-content: center;
+   margin: auto;
+   padding-top: 50px;
+   width: 49%;
+  }
+  h2{
+    padding: 35px;
+    font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  }
+h3{
+  padding: 35px;
+  font-family:'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+  .centered {
+    margin: auto;
+    width: 40%;
+    border-left: 25px gray;
+    border-right: 25px gray;
+    size: 50%;
+  }
+  h5 {
+    display: inline;
+  }
+  .footer-p{
+    display: inline;
+  }
