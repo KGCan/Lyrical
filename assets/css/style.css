@@ -67,3 +67,13 @@ h3{
   .footer-p{
     display: inline;
   }
+    #results li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+  
+  li:hover {
+    background-color:purple;
+  }

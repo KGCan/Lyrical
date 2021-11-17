@@ -50,7 +50,7 @@ buttonSearch.addEventListener("click", function () {
 
                 var songTitle = "http://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artist.id + "/top?limit=20"
                 console.log(artist)
-                results.append(artist.tracklist)
+               // results.append(artist.tracklist)
                 fetch(songTitle, {
                     mode: 'cors',
                     headers: {
@@ -74,7 +74,7 @@ buttonSearch.addEventListener("click", function () {
             var song = data[i]
             var songs = document.getElementById("songs")
             var listEl = document.createElement("li")
-            //add class to list el
+
             listEl.textContent = song.title
             listEl.onclick = searchLyrics
             songs.appendChild(listEl)
@@ -93,6 +93,9 @@ buttonSearch.addEventListener("click", function () {
             }).catch(function (err) {
                 console.log(err);
 
-            });
+          });
+          var lyrics = document.getElementById("lyric-text")
+          var pEl = lyrics.appendChild(song.lyrics)
+          console.log(song.lyrics)
     }
 })
