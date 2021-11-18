@@ -1,23 +1,12 @@
+// Variables
 var buttonSearch = document.querySelector(".search-button")
-
-
-var string01 = "http://api.deezer.com/artist/3469/top?limit=50"
-var string02 = "http://cors-anywhere.herokuapp.com/"
-var artistID = 23
-
-var temp = ""
-
-var url = string02 + string01
-fetch(url).then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
-
 var searchText = document.querySelector(".input-group-field")
 
+// Event listener for search button (artist)
 buttonSearch.addEventListener("click", function () {
     var results = document.getElementById("results")
     var artistUrl = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + searchText.value
-
+// Console Log the value to confirm functionality
     console.log(searchText.value)
     function getArtist() {
         fetch(artistUrl, {
@@ -37,13 +26,13 @@ buttonSearch.addEventListener("click", function () {
                     }
                 }).then(res => res.json())
                     .then(data => {
-                        var string = "this is a string"
-                        console.log(data)
+                         console.log(data)
                         showSongs(data.data)
                     })
                 return artist
             })
     }
+    // Pull song data from API
     var trackList = getArtist()
     listEl.textContent = song.title
     function showSongs(data) {
@@ -52,7 +41,7 @@ buttonSearch.addEventListener("click", function () {
             var song = data[i]
             var songs = document.getElementById("songs")
             var listEl = document.createElement("li")
-
+        // Push list of songs to the page
             listEl.textContent = song.title
             listEl.onclick = searchLyrics
             songs.appendChild(listEl)
