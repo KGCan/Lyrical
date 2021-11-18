@@ -55,12 +55,16 @@ https://kgcan.github.io/Lyrical/
 
 # Screenshot:
 
-
+![Website Screenshot](https://user-images.githubusercontent.com/88002224/142351037-c9e40536-fd20-40ca-9419-523fd34b1c81.png)
 
 # Additional resources Used to complete the project
 
 * Deezer API
 * LyricsOVH API
-* Assistance from TA's Quinn & Dru
+* Assistance from TA Quinn
+* Assistance from TA Dru
+* Assistance from TA Jacob
 * Assistance from Instructor Stacy
-* Assistance from Tutors Robert Parsons & Andrew Hardman
+* Assistance from Tutor Robert Parsons
+* Assistance from Tutor Andrew Hardman
+* UC Davis Coding Bootcamp
