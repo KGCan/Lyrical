@@ -33,8 +33,12 @@
 * CSS
 * JavaScript
 * Foundation
+* Canva
+* Deezer API
+* LyricsOVH API
+* W3.css
 
-# Contributors
+# Contributors & Primary Roles
 
 * Sara Brizendine
 * Megan Phillips
@@ -59,4 +63,4 @@ https://kgcan.github.io/Lyrical/
 * LyricsOVH API
 * Assistance from TA's Quinn & Dru
 * Assistance from Instructor Stacy
-* Assistance from Tutors
+* Assistance from Tutors Robert Parsons & Andrew Hardman
