@@ -1,11 +1,12 @@
 
 
 var buttonSearch = document.querySelector(".search-button")
+var clearLyrics = document.querySelector("#clear-lyrics")
+var clearArtist = document.querySelector("#clear-artist")
 
-
-var string01 = "http://api.deezer.com/artist/3469/top?limit=50"
-var string02 = "http://cors-anywhere.herokuapp.com/"
-var artistID = 23
+// var string01 = "http://api.deezer.com/artist/3469/top?limit=50"
+// var string02 = "http://cors-anywhere.herokuapp.com/"
+// var artistID = 23
 
 var temp = ""
 //for (let i = 0; i < string01.length -1; i++) {
@@ -18,19 +19,27 @@ var temp = ""
 
 // }
 // console.log(temp)
-var url = string02 + string01
-fetch(url).then(res => res.json())
-    .then(data => console.log(data))
-    .catch(err => console.log(err))
+// var url = string02 + string01
+// fetch(url).then(res => res.json())
+//     .then(data => console.log(data))
+//     .catch(err => console.log(err))
 
 var searchText = document.querySelector(".input-group-field")
 
+
+// clearLyrics.addEventListener("click", function clearContent() {
+//     document.getElementsById("lyric-text").innerHTML = "";
+
+// })
+
 buttonSearch.addEventListener("click", function () {
     var results = document.getElementById("results")
-    var artistUrl = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + searchText.value
-    //     fetch (artistUrl).then(res=>res.json())
-    // .then(data=>console.log(data))
-    // .catch(err=>console.log(err))
+    var artistName = searchText.value
+    artistName = artistName.replace(/\s+/g, '-')
+    var artistUrl = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artistName
+    fetch(artistUrl).then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     console.log(searchText.value)
     function getArtist() {
         fetch(artistUrl, {
@@ -66,8 +75,8 @@ buttonSearch.addEventListener("click", function () {
                 return artist
             })
     }
-    var trackList = getArtist()
-    listEl.textContent = song.title
+    getArtist()
+
     function showSongs(data) {
         console.log(data)
         for (i = 0; i < data.length; i++) {
@@ -76,35 +85,75 @@ buttonSearch.addEventListener("click", function () {
             var listEl = document.createElement("li")
 
             listEl.textContent = song.title
-            listEl.onclick = searchLyrics
+            // listEl.onclick = searchLyrics
             songs.appendChild(listEl)
-            var searchLyrics = function (event) {
-                //get search res 
+            //     var searchLyrics = function (event) {
 
-                var lyricsGoHere = document.getElementById("lyric-text")
-                var url = "https://api.lyrics.ovh/v1/" + searchText.value + "/" + song.title
 
-                JSON.stringify(song.title)
+            //         var lyricsGoHere = document.getElementById("lyric-text")
+            //         var url = "https://api.lyrics.ovh/v1/" + searchText.value + "/" + event.target.innerText
 
-                fetch(url).then(res => res.json())
-                    .then(song => {
-                        console.log(song.lyrics)
-                        lyricsGoHere.append(song.lyrics)
-                            .then(function (data) {
-                                console.log(data)
+            //         JSON.stringify(song.title)
 
-                            }).catch(function (err) {
-                                console.log(err);
+            //         fetch(url).then(res => res.json())
+            //             .then(song => {
+            //                 console.log(song.lyrics)
+            //                 lyricsGoHere.append(song.lyrics)
+            //                     // .then(function (data) {
+            //                     //     console.log(data)
 
-                            });
-                    })
+            //                     }).catch(function (err) {
+            //                         console.log(err);
 
-            }
+            //                     });
+            //             // })
+
+            //     }
+
+            // }
+
 
         }
+    }
+    var searchLyrics = function (event) {
 
+
+        var lyricsGoHere = document.getElementById("lyric-text")
+        var artistName = searchText.value
+        artistName = artistName.replace(/\s+/g, '-')
+        console.log(artistName)
+        var url = "https://api.lyrics.ovh/v1/" + artistName + "/" + event.target.innerText
+
+        JSON.stringify(event.target.innerText)
+
+        fetch(url).then(res => res.json())
+            .then(song => {
+                console.log(song.lyrics)
+                lyricsGoHere.append(song.lyrics)
+                // .then(function (data) {
+                //     console.log(data)
+
+            }).catch(function (err) {
+                console.log(err);
+
+            });
+        // })
 
     }
+
+
+    clearLyrics.addEventListener("click", function clearContent() {
+        document.getElementById("lyric-text").innerText = "";
+        console.log("clicked")
+
+    })
+
+    document.querySelector("#songs").addEventListener("click", searchLyrics)
+
+    clearArtist.addEventListener("click", function clearContent(){
+        window.location.reload()
+    })
+
     // var song = event.target.textContent("li")
     // console.log(textContent)
     // var artist = searchText.value
@@ -138,7 +187,7 @@ buttonSearch.addEventListener("click", function () {
     //   });
 
     // })
-// })
+    // })
 })
 
 // buttonSearch.addEventListener(“click”, function(){
