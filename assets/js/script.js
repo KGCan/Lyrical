@@ -26,7 +26,7 @@ buttonSearch.addEventListener("click", function () {
 
 
                 // creates url with arttist id from deezer api
-                var songTitle = "http://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artist.id + "/top?limit=20"
+                var songTitle = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artist.id + "/top?limit=20"
                 console.log(artist)
                 // results.append(artist.tracklist)
                 fetch(songTitle, {
