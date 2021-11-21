@@ -1,12 +1,7 @@
-
-
 var buttonSearch = document.querySelector(".search-button")
 var clearLyrics = document.querySelector("#clear-lyrics")
 var clearArtist = document.querySelector("#clear-artist")
-
-
 var searchText = document.querySelector(".input-group-field")
-
 
 // runs deezer api on search button click
 buttonSearch.addEventListener("click", function () {
