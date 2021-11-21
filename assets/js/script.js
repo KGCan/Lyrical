@@ -1,26 +1,23 @@
+
+
 var buttonSearch = document.querySelector(".search-button")
+var clearLyrics = document.querySelector("#clear-lyrics")
+var clearArtist = document.querySelector("#clear-artist")
 
 
-var string01 = "http://api.deezer.com/artist/3469/top?limit=50"
-var string02 = "cors-anywhere.herokuapp.com/"
-var artistID = 23
+var searchText = document.querySelector(".input-group-field")
 
-var temp = ""
-for (let i = 0; i < string01.length -1; i++) {
-    if (i == 6) {
-        temp = temp + (string01[i] + string02)
-    }
-    else {
-        temp = temp + string01[i]
-    }
 
-}
-console.log(temp)
-
+// runs deezer api on search button click
 buttonSearch.addEventListener("click", function () {
-    var searchText = document.querySelector(".input-group-field")
     var results = document.getElementById("results")
-    var artistUrl = "https://cors-anywhere.herokuapp.com/api.deezer.com/artist/" + searchText.value
+    var artistName = searchText.value
+    //uses regex to replace space in artist search text with dash
+    artistName = artistName.replace(/\s+/g, '-')
+    var artistUrl = "https://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artistName
+    fetch(artistUrl).then(res => res.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
     console.log(searchText.value)
     function getArtist() {
         fetch(artistUrl, {
@@ -32,15 +29,11 @@ buttonSearch.addEventListener("click", function () {
             .then(response => response.json())
             .then(artist => {
 
-                //insert the string of cors-anywhere
-                // artist.title
-                // insert the limit through string manipulation
 
-
-
-                var songTitle = "http://cors-anywhere.herokuapp.com/api.deezer.com/artist/3469/top?limit=5" + Array.length[0]
+                // creates url with arttist id from deezer api
+                var songTitle = "http://cors-anywhere.herokuapp.com/http://api.deezer.com/artist/" + artist.id + "/top?limit=20"
                 console.log(artist)
-                results.append(artist.tracklist)
+                // results.append(artist.tracklist)
                 fetch(songTitle, {
                     mode: 'cors',
                     headers: {
@@ -49,43 +42,59 @@ buttonSearch.addEventListener("click", function () {
                 }).then(res => res.json())
                     .then(data => {
                         var string = "this is a string"
-                        console.log(string[6])
+                        // console.log(string[6])
                         console.log(data)
-
+                        showSongs(data.data)
                     })
                 return artist
             })
     }
-    var trackList = getArtist()
-    fetch(trackList)
-        .then(response => response.json())
-        .then(tracks => {
-            console.log(tracks)
-            results.append(tracks.tracklist)
-        })
+    getArtist()
+    // creates dynamic list with track titles as each li
+    function showSongs(data) {
+        console.log(data)
+        for (i = 0; i < data.length; i++) {
+            var song = data[i]
+            var songs = document.getElementById("songs")
+            var listEl = document.createElement("li")
+
+            listEl.textContent = song.title
+
+            songs.appendChild(listEl)
+        }
+    }
+    //uses artist name from deezer api and text from each list item to create url for lyrics.ovh
+    var searchLyrics = function (event) {
+        var lyricsGoHere = document.getElementById("lyric-text")
+        var artistName = searchText.value
+        //uses regex to replace space in artist search text with dash
+        artistName = artistName.replace(/\s+/g, '-')
+        console.log(artistName)
+        var url = "https://api.lyrics.ovh/v1/" + artistName + "/" + event.target.innerText
+
+        JSON.stringify(event.target.innerText)
+
+        fetch(url).then(res => res.json())
+            .then(song => {
+                console.log(song.lyrics)
+                lyricsGoHere.append(song.lyrics)
+
+            }).catch(function (err) {
+                console.log(err);
+            });
+    }
+
+// click on new song button clears lyrics and allows a new song selection
+    clearLyrics.addEventListener("click", function clearContent() {
+        document.getElementById("lyric-text").innerText = "";
+        console.log("clicked")
+
+    })
+// adds event listener to all li in the sonfs ul 
+    document.querySelector("#songs").addEventListener("click", searchLyrics)
+//click on different artist button reloads to page and clears all data
+    clearArtist.addEventListener("click", function clearContent() {
+        window.location.reload()
+    })
+
 })
-
-// buttonSearch.addEventListener("click", function(){
-//     var searchText = document.querySelector(".input-group-field")
-//     var LyricsGoHere = document.getElementById("results")
-//     var lyricsUrl = "https://api.lyrics.ovh/v1/sia/"+searchText.value
-//     console.log(searchText.value)
-//     fetch(lyricsUrl)
-//     .then(response => response.json())
-//     .then(song => {
-//         console.log(song.lyrics)
-//         LyricsGoHere.append(song.lyrics)
-//     })
-// })
-
-var searchLyrics = function () {
-    //get search res 
-    var url = "https://api.lyrics.ovh/v1/" + artist + "/" + song
-    fetch(url).then(function (data) {
-        console.log
-
-    }).catch(function (err) {
-        console.log(err);
-    });
-}
-var spotifyUrl = "https://api.spotify.com/v1/artists/1vCWHaC5f2uS3yhpwWbIA6/albums?album_type=SINGLE&offset=20&limit=10"
