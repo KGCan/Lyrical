@@ -17,7 +17,7 @@
 ## User Story
 * AS A user
 * I WANT to search for songs by an artist
-* SO THAT I find a list of 5 songs by that artist and I can see the lyrics of that song
+* SO THAT I find a list of songs by that artist and when I click on the song title I can see the lyrics of that song
 
 ## Acceptance Criteria
 
@@ -38,7 +38,7 @@
 * LyricsOVH API
 * W3.css
 
-# Contributors & Primary Roles
+# Contributors
 
 * Sara Brizendine
 * Megan Phillips
@@ -55,7 +55,7 @@ https://kgcan.github.io/Lyrical/
 
 # Screenshot:
 
-![Website Screenshot](https://user-images.githubusercontent.com/88002224/142351037-c9e40536-fd20-40ca-9419-523fd34b1c81.png)
+![Page Screenshot for README](https://user-images.githubusercontent.com/88002224/142770493-7922f63d-7350-40c6-9092-7e43022cd18d.png)
 
 # Additional resources Used to complete the project
 
@@ -68,3 +68,7 @@ https://kgcan.github.io/Lyrical/
 * Assistance from Tutor Robert Parsons
 * Assistance from Tutor Andrew Hardman
 * UC Davis Coding Bootcamp
+
+## Special Instructions:
+
+* Prior to visiting website please visit https://cors-anywhere.herokuapp.com/corsdemo and request demo access, once completed visit our deployed site above.

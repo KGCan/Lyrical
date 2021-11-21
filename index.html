@@ -25,9 +25,9 @@
                 <img src="assets\images\lyrical-logo-large.gif" alt="music note and Lyrical name" />
             </div>
         </div>
-      </div>
+        </div>
     </header>
-      
+
 
     <!--search and results field-->
     <div class="mainSearch">
@@ -49,25 +49,35 @@
                 <h2>
                     Select a Song for Lyrics
                 </h2>
-                <div class= "w3-half w3-container" id="results">
+                <div id="results">
 
-                    <!--list of 20 results will appear here and are "clickable"-->
-                    <ul id="songs"></ul>
+                    <!--list of results will appear here to show up to x amount of matches, results will be "clickable"-->
+                    <ul id="songs">
+
+                    </ul>
+                    <!--connect results list to secondary API so when we click one of the results it will enter the artist & song title and pull the lyrics-->
                 </div>
+                <button class="w3-button w3-black" id="clear-artist">Different Artist</button>
             </div>
 
-            <div class="w3-half w3-container">
+            <div class="w3-container w3-cell">
                 <h2>
                     Lyrics
                 </h2>
                 <div class="lyric-results">
-                    <p id="lyric-text"></p>
+                    <pre id="lyric-text">
+
+                    </pre>
+
                 </div>
+                
+                <button class="w3-button w3-black" id="clear-lyrics">New Song?</button>
+                
             </div>
         </div>
     </div>
-     <!--footer section-->
-     <footer>
+    <!--footer section-->
+    <footer>
         <h5>2021</h5>
         <div>
             <p class="footer-p">Created by: Sara Brizendine, Kirsten Canady, Jazzmin Goodman, and Megan
